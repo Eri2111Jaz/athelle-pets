@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ATHELLE PETS | Accesorios para mascotas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Marcellus&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="top">Envío gratis en compras mayores a Bs 300 · Nuevos productos cada semana</div>
+  <header>
+    <div class="wrap hd">
+      <div class="logo" id="logo"><img data-img="logo" data-ph="ATHELLE PETS" data-w="220" data-h="60"
+          alt="ATHELLE PETS"></div>
+      <div class="search"><i class="fa-solid fa-magnifying-glass"></i><input id="q" type="search"
+          placeholder="Buscar productos..."></div>
+      <button class="cartbtn" id="openCart"><i class="fa-solid fa-bag-shopping"></i><span class="badge"
+          id="badge">0</span></button>
+    </div>
+    <nav class="cats">
+      <div class="wrap" id="chips"></div>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <h1>Todo lo que tu mascota ama, en un solo lugar</h1>
+        <p>Camas, juguetes y accesorios para perros, gatos y otros animales.</p>
+        <button class="btn" onclick="document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})">Ver
+          catálogo</button>
+      </div>
+      <div class="heroimg"><img data-img="hero" data-ph="Imagen principal" data-w="400" data-h="300" alt="ATHELLE PETS">
+      </div>
+    </section>
+
+    <section class="tiles" id="tiles"></section>
+
+    <h2 class="sec" id="catalogo">Nuestro catálogo</h2>
+    <div class="subchips" id="subchips"></div>
+    <div class="tools">
+      <select id="sort">
+        <option value="">Ordenar: Destacados</option>
+        <option value="asc">Precio: menor a mayor</option>
+        <option value="desc">Precio: mayor a menor</option>
+        <option value="off">Mayores descuentos</option>
+        <option value="az">Nombre A-Z</option>
+      </select>
+      <label class="chk"><input type="checkbox" id="onlyOffer"> Solo ofertas</label>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="grid" id="grid"></div>
+
+    <h2 class="sec" id="blog_section">Datos Curiosos y Blog</h2>
+    <div class="public-form">
+      <h4>¡Comparte una historia o dato curioso!</h4>
+      <form id="public-blog-form">
+        <input id="pb_titulo" placeholder="Título" required maxlength="60">
+        <textarea id="pb_texto" rows="2" placeholder="Escribe aquí (máx 500 caracteres)..." required
+          maxlength="500"></textarea>
+        <div class="two"><input id="pb_img1" placeholder="URL Imagen 1 (Opcional)"><input id="pb_img2"
+            placeholder="URL Imagen 2 (Opcional)"></div>
+        <button class="btn" type="submit">Publicar en el Blog</button>
+      </form>
+    </div>
+    <div class="blog-grid" id="blog-grid"></div>
+
+    <h2 class="sec" id="resenas_section">Reseñas de la tienda</h2>
+    <div class="resenas-wrapper">
+      <div class="public-form resena-form">
+        <h4>Déjanos tu opinión</h4>
+        <form id="public-resena-form">
+          <input id="pr_nombre" placeholder="Tu nombre" required maxlength="30">
+          <select id="pr_estrellas" required style="margin: 10px 0;">
+            <option value="5">⭐⭐⭐⭐⭐ (Excelente)</option>
+            <option value="4">⭐⭐⭐⭐ (Muy bueno)</option>
+            <option value="3">⭐⭐⭐ (Bueno)</option>
+            <option value="2">⭐⭐ (Regular)</option>
+            <option value="1">⭐ (Malo)</option>
+          </select>
+          <textarea id="pr_comentario" rows="2" placeholder="¿Qué te pareció el producto?" required
+            maxlength="200"></textarea>
+          <button class="btn" type="submit">Enviar Reseña</button>
+        </form>
+      </div>
+      <div class="resenas-list" id="resenas-list"></div>
+    </div>
+
+    <section class="benef">
+      <div><span class="ico"><img data-img="beneficios.envios" data-ph="Envíos" alt=""></span><b>Envíos rápidos</b>
+        <p>Entregas a toda la ciudad.</p>
+      </div>
+      <div><span class="ico"><img data-img="beneficios.seguro" data-ph="Seguro" alt=""></span><b>Compra segura</b>
+        <p>Productos de calidad.</p>
+      </div>
+      <div><span class="ico"><img data-img="beneficios.whatsapp" data-ph="WhatsApp" alt=""></span><b>Atención
+          directa</b>
+        <p>Pedidos por WhatsApp.</p>
+      </div>
+      <div><span class="ico"><img data-img="beneficios.ubicacion" data-ph="Ubicación" alt=""></span><b>Visítanos</b>
+        <p><a href="#" id="link_ubicacion" target="_blank"
+            style="color: var(--lav); font-weight: 600; text-decoration: none;">Ver Google Maps</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="fg">
+        <div>
+          <h4>ATHELLE PETS</h4>
+          <p>Accesorios para mascotas felices.</p>
+        </div>
+        <div>
+          <h4>Categorías</h4>
+          <ul>
+            <li>Perro</li>
+            <li>Gato</li>
+            <li>Otros animales</li>
+            <li>Camas</li>
+            <li>Juguetes</li>
+            <li>Accesorios</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li>WhatsApp</li>
+            <li>La Paz, Bolivia</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Síguenos</h4>
+          <div class="redes"><a href="#" id="r_instagram"><img data-img="redes.instagram" data-ph="IG" alt=""></a><a
+              href="#" id="r_facebook"><img data-img="redes.facebook" data-ph="FB" alt=""></a><a href="#"
+              id="r_tiktok"><img data-img="redes.tiktok" data-ph="TT" alt=""></a></div>
+        </div>
+      </div>
+      <div class="copy">© 2026 ATHELLE PETS.</div>
+    </div>
+  </footer>
+
+  <div class="ov" id="ov"></div>
+
+  <aside class="drawer" id="drawer">
+    <div class="dh"><span>Tu carrito</span><button class="x" id="closeCart">✕</button></div>
+    <div class="items" id="items"></div>
+    <div class="df">
+      <div class="tot"><span>Total</span><span id="total">Bs 0.00</span></div>
+      <button class="btn" style="width:100%" id="wa">Pedir por WhatsApp</button>
+      <button class="btn alt" style="width:100%;margin-top:.5rem" id="clear">Vaciar carrito</button>
+    </div>
+  </aside>
+
+  <div class="modal" id="loginModal">
+    <h3>Acceso Administrador</h3>
+    <input type="text" id="loginUser" placeholder="Usuario (adm)" style="margin-bottom: 10px;">
+    <input type="password" id="loginPass" placeholder="Contraseña (1234)">
+    <div class="row"><button class="btn" id="loginOk" style="flex:1">Entrar</button><button class="btn alt"
+        id="loginCancel">Cancelar</button></div>
+  </div>
+
+  <div class="modal big" id="adm">
+    <div class="admhd">
+      <h3>Panel de Administración</h3><button class="x" id="admX">✕</button>
+    </div>
+    <div class="tabs">
+      <button class="tab-btn on" data-tab="tab-prod">Productos</button>
+      <button class="tab-btn" data-tab="tab-ped">Pedidos</button>
+      <button class="tab-btn" data-tab="tab-blog">Moderar Blog</button>
+    </div>
+    <div class="state" id="state"></div>
+
+    <div id="tab-prod" class="tab-content on">
+      <div class="ag">
+        <form id="form">
+          <b id="ftitle">Nuevo producto</b>
+          <input type="hidden" id="f_id">
+          <input id="f_nombre" placeholder="Nombre" required>
+          <div class="two">
+            <input id="f_precio" type="number" step="0.01" placeholder="Precio base (por defecto)">
+            <input id="f_ant" type="number" step="0.01" placeholder="Precio anterior (opcional)">
+          </div>
+          <div class="two">
+            <select id="f_cat" required></select>
+            <select id="f_sub"></select>
+          </div>
+          <input id="f_stock" type="number" min="0" placeholder="Stock base (se suma solo con las variantes)">
+          <input id="f_medidas" placeholder="Medidas (Ej: T0: 100x50, T4: 20x15)">
+          <div class="variantes-box">
+            <label class="var-title">Variantes (Talla + Color, cada una con su precio y stock):</label>
+            <div id="variantes-list"></div>
+            <small id="var-vacio">Sin variantes: se usará el precio y stock base.</small>
+            <button class="btn alt sm" type="button" id="addVar">+ Agregar Variante</button>
+          </div>
+
+          <div class="imgrow"><input id="f_img" placeholder="URL de foto"><img id="f_prev" alt=""></div>
+          <textarea id="f_desc" rows="2" placeholder="Descripción"></textarea>
+
+          <div class="two"><button class="btn" type="submit" id="fsave">Guardar</button><button class="btn alt"
+              type="button" id="fcancel">Limpiar</button></div>
+          <button class="btn alt sm" type="button" id="seed" style="display:none">Subir ejemplos a Supabase</button>
+        </form>
+
+        <div class="tw">
+          <table>
+            <thead>
+              <tr>
+                <th>Prod</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Variantes</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-ped" class="tab-content">
+      <h4 style="margin-bottom: 1rem;">Historial de Pedidos</h4>
+      <div class="tw">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Fecha</th>
+              <th>Total</th>
+              <th>Ver</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-pedidos"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="tab-blog" class="tab-content">
+      <h4 style="margin-bottom: 1rem;">Moderar Blog</h4>
+      <div class="tw">
+        <table>
+          <thead>
+            <tr>
+              <th>Título</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-blog"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="detModal">
+    <h3 id="det_titulo">Detalles</h3>
+    <div id="det_contenido" style="margin-bottom: 1rem; max-height: 50vh; overflow-y: auto;"></div>
+    <button class="btn" id="det_close" style="width: 100%;">Cerrar</button>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- ⚠️ ESTO ES VITAL: EL SDK DE SUPABASE DEBE IR ANTES DE APP.JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
